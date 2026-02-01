@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valentine Proposal 💘</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: "Poppins", Arial, sans-serif;
+    }
+
+    .card {
+      background: #fff;
+      padding: 25px 20px;
+      width: 90%;
+      max-width: 350px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 120px;
+    }
+
+    button {
+      padding: 14px 22px;
+      font-size: 18px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .no {
+      background: #ddd;
+      position: absolute;
+      left: 50%;
+      top: 60px;
+      transform: translateX(-50%);
+    }
+
+    #msg {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #ff4d6d;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Will you be my Valentine? 💕</h1>
+
+    <div class="buttons">
+      <button class="yes" onclick="yes()">Yes 😍</button>
+      <button class="no" id="no">No 🙃</button>
+    </div>
+
+    <p id="msg"></p>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+
+    function yes() {
+      document.getElementById("msg").innerHTML =
+        "Yayyy! 💖 Best Valentine ever 😘";
+    }
+
+    function moveNo() {
+      const x = Math.random() * 70;
+      const y = Math.random() * 70;
+      noBtn.style.left = x + "%";
+      noBtn.style.top = y + "%";
+    }
+
+    // For desktop
+    noBtn.addEventListener("mouseover", moveNo);
+
+    // For mobile
+    noBtn.addEventListener("touchstart", moveNo);
+  </script>
+</body>
+</html>
